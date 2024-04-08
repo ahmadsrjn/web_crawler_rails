@@ -39,10 +39,12 @@ class WebCrawlerService
   def fetch_internal_links(document)
     document.css('a').map do |link|
       href = link['href']
-      next unless href.start_with?('/') || href.start_with?(@base_url)
-      href.delete_prefix!(@base_url)
-      href.chomp!('/')
-      href.empty? ? '/' : href
+      if href.present? || !href.nil?
+        next unless href.start_with?('/') || href.start_with?(@base_url)
+        href.delete_prefix!(@base_url)
+        href.chomp!('/')
+        href.empty? ? '/' : href
+      end
     end.uniq.compact.reject { |href| href == '#' || href.start_with?('?') }
   end
 end

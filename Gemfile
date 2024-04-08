@@ -24,7 +24,11 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem 'bootstrap', '~> 5.3.2'
+gem 'sassc-rails'
 gem "jbuilder"
+gem 'webpacker', '~> 5.0'
+#nokogiri to parse HTML/XML document in ruby
 gem 'nokogiri'
 gem 'httparty'
 gem 'rspec-rails', '~> 5.0', '>= 5.0.0'
