@@ -1,0 +1,8 @@
+<div>
+<% if @show_domain_sitemap.present? %>
+    <h2>Sitemap for <%= params[:domain] %></h2>
+    <pre><%= JSON.pretty_generate(@show_domain_sitemap) %></pre>
+<% else %>
+    <p>No sitemap available. Please submit a domain to crawl.</p>
+<% end %>
+</div>

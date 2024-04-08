@@ -1,0 +1,23 @@
+
+[1mFrom:[0m /home/srjnahmad/web_crawler/webcrawler/app/services/web_crawler_service.rb:20 WebCrawlerService#crawl:
+
+    [1;34m13[0m: [32mdef[0m [1;34mcrawl[0m(url = @base_url, path = [31m[1;31m'[0m[31m/[1;31m'[0m[31m[0m)
+    [1;34m14[0m:   [32mreturn[0m [32mif[0m @sitemap.key?(path)
+    [1;34m15[0m: 
+    [1;34m16[0m:   html = [1;34;4mHTTParty[0m.get(url).body
+    [1;34m17[0m:   document = [1;34;4mNokogiri[0m::HTML(html)
+    [1;34m18[0m: 
+    [1;34m19[0m:   assets = fetch_static_assets(document)
+ => [1;34m20[0m:   binding.pry
+    [1;34m21[0m:   links = fetch_internal_links(document)
+    [1;34m22[0m: 
+    [1;34m23[0m:   @sitemap[path] = { [35massets[0m: assets, [35mlinks[0m: links }
+    [1;34m24[0m: 
+    [1;34m25[0m:   links.each [32mdo[0m |link_path|
+    [1;34m26[0m:     next_url = [31m[1;31m"[0m[31m#{@base_url}[0m[31m#{link_path}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m27[0m:     crawl(next_url, link_path)
+    [1;34m28[0m:   [32mend[0m
+    [1;34m29[0m: [32mrescue[0m [1;34;4mHTTParty[0m::[1;34;4mError[0m, [1;34;4mSocketError[0m => e
+    [1;34m30[0m:   puts [31m[1;31m"[0m[31mError fetching #{url}[0m[31m: #{e.message}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m31[0m: [32mend[0m
+

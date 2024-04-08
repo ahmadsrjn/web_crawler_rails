@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+  <title>Web Crawler Application</title>
+</head>
+<body>
+  <h1>Crawl Your Website</h1>
+  <%= form_with url: crawl_any_website_path, method: :post, local: true do |form| %>
+    <div>
+      <%= form.label :domain, 'Enter URL to crawl:' %>
+      <%= form.text_field :domain, required: true %>
+    </div>
+
+    <div>
+      <%= form.submit 'Start Crawling' %>
+    </div>
+  <% end %>
+  <div>
+    <% if @sitemap.present? %>
+        <h2>Sitemap for <%= params[:domain] %></h2>
+        <pre><%= JSON.pretty_generate(@sitemap) %></pre>
+    <% else %>
+        <p>No sitemap available. Please submit a domain to crawl.</p>
+    <% end %>
+  </div>
+</body>
+</html>
