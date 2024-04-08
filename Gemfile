@@ -34,6 +34,7 @@ gem 'httparty'
 gem 'rspec-rails', '~> 5.0', '>= 5.0.0'
 gem 'pry'
 gem 'pry-byebug'
+gem 'activerecord-session_store'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

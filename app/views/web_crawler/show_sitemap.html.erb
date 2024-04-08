@@ -3,7 +3,7 @@
         <%= link_to  'Go Back', root_path, method: :get, class: "btn btn-danger" %>
     </div>
      <% if @show_domain_sitemap.present? %>
-        <h2>Sitemap for <%= params[:domain] %></h2>
+        <h2>Sitemap for <%= @domain_name %></h2>
         <pre><%= JSON.pretty_generate(@show_domain_sitemap) %></pre>
      <% else %>
         <p>No sitemap available. Please submit a domain to crawl.</p>

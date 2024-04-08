@@ -6,7 +6,7 @@ class WebCrawlerService
 
   def initialize(domain)
     @domain = domain
-    @base_url = "http://#{@domain}"
+    @base_url = "https://#{@domain}"
     @sitemap = {}
   end
 
@@ -20,10 +20,10 @@ class WebCrawlerService
 
     @sitemap[path] = { assets: assets, links: links }
 
-    links.each do |link_path|
-      next_url = "#{@base_url}#{link_path}"
-      crawl(next_url, link_path)
-    end
+    # links.each do |link_path|
+    #   next_url = "#{@base_url}#{link_path}"
+    #   crawl(next_url, link_path)
+    # end
   rescue HTTParty::Error, SocketError => e
     puts "Error fetching #{url}: #{e.message}"
   end
