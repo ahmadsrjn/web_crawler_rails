@@ -1,9 +1,11 @@
 <div>
-    <div class="d-flex justify-content-evenly">
-        <%= link_to  'Go Back', root_path, method: :get, class: "btn btn-danger" %>
+    <div class="d-flex justify-content-evenly fixed-top mt-2">
+        <button class="btn btn-danger progress-bar-striped">
+            <%= link_to  'Go Back', root_path, method: :get, class: "text-decoration-none text-white fw-bolder" %>
+        </button>
     </div>
      <% if @show_domain_sitemap.present? %>
-        <h2>Sitemap for <%= @domain_name %></h2>
+        <h2 class="mt-5">Sitemap for <%= @domain_name %></h2>
         <pre><%= JSON.pretty_generate(@show_domain_sitemap) %></pre>
      <% else %>
         <p>No sitemap available. Please submit a domain to crawl.</p>

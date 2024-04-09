@@ -11,13 +11,12 @@
       <h4>Crawl Your Website</h4>
     </div>
   </div>
-  <%= form_with url: crawl_any_website_path, method: :post, local: true, html: { class: "form-inline" } do |form| %>
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1">
         <%= form_with url: crawl_any_website_path, method: :post, local: true, html: { class: "form-inline" } do |form| %>
           <div class="input-group mb-3 mt-5">
-            <%= form.label :domain, 'Enter domain to crawl:', class: "input-group-text", id: "inputGroup-sizing-default" %>
+            <%= form.label :domain, 'Enter URL to crawl: http://www.', class: "input-group-text", id: "inputGroup-sizing-default" %>
             <%= form.text_field :domain, required: true, aria: { label: 'Enter URL to crawl' }, class: "form-control", placeholder: "somedomain.com" %>
           </div>
           <div class="d-flex justify-content-center">
@@ -27,6 +26,5 @@
       </div>
     </div>
   </div>
-<% end %>
 </body>
 </html>
