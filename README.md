@@ -9,6 +9,11 @@ This application allows user to enter any domain(example.com) or url(https://www
 
 Note : Crawled data is in JSON format and it is displayed as JSON structure on view/page as well.
 
+SCREENSHOTS - >
+
+![Start Crawling Page](docs/images/craw_web_rails_1.png "Enter Domain in Input field")
+![Crawled Data in JSON format](docs/images/craw_web_rails_2.png "Crawled Data")
+
 
 
 
